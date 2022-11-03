@@ -38,7 +38,7 @@ def cisco_cmd_execution(hostname,commands):
         print("Check hostname IP address")
         
 
-hostnames = ["192.168.1.111","192.168.1.12"]
+hostnames = ["192.168.1.11","192.168.1.12"]
 for hostname in hostnames:
     username = input(f"Please enter username for {hostname}? ")
     password = getpass(f"\U0001F511 Enter password of user {username}: ") or "cisco"
