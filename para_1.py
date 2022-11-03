@@ -28,7 +28,7 @@ def cisco_cmd_execution(hostname,commands):
             print(output.decode(),end="")
 
         device_access.send("show run int loop1000\n")
-        time.sleep(1)
+        time.sleep(5)
         output = device_access.recv(65535)
         print(output.decode(),end="")
         ssh_client.close()
