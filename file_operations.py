@@ -17,8 +17,9 @@ def cisco_cmd_push(hostname,commands):
 
         print("Connection established successfully")
 
-        # now = datetime.datetime.now().replace(microsecond=0)
-        file_name = f"{hostname}.txt"
+        now = datetime.datetime.now().replace(microsecond=0)
+        now = str(now).split()[0]
+        file_name = f"{now}:{hostname}.txt"
         print(file_name)
         device_access = device_ssh.invoke_shell()
         device_access.send("terminal length 0\n")
