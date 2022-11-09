@@ -16,6 +16,7 @@ GigabitEthernet0/3         unassigned      YES NVRAM  up                    up
 Loopback0                  150.1.1.1       YES NVRAM  up                    up      
 Tunnel0                    155.1.0.1       YES NVRAM  up                    up 
 """
+
 t = re.compile(r"(\S+)\s+([\d\.]+)")
 res = t.findall(inf)
 table.add_column("Interfaces",justify="left",style="cyan")
