@@ -20,6 +20,7 @@ table.add_column("Interface Name",justify="left")
 table.add_column("Interface IPs",justify="left")
 interfaces = inf.splitlines()
 int_slice = interfaces[2:]
+
 # console.print(interfaces)
 # console.print(int_slice)
 
