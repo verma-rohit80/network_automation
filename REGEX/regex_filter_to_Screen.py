@@ -3,7 +3,11 @@
 2. Scans show run and print hostname, Domain name and Interface name with IP address
 """
 import re
-from  rich import print
+from  rich import print,box
+from rich.table import Table
+from rich.console import Console
+
+console = Console()
 def regex_version(file_name):
     with open(file_name) as f:
         f_ver = f.read()
@@ -72,31 +76,48 @@ def regex_ip_route(file_name):
     return ip_route
 
 # show version
-print("Extract from show Version")
+table = Table(title="Extract from show Version".title())
 file_name = "2022-11-08__02__192.168.1.11__show version.txt"
 result = regex_version(file_name)
-print(f"{'Version'.ljust(20)} : {result[0].rjust(len(result[2])+1)}")
-print(f"{'Uptime is'.ljust(20)} : {result[1].rjust(len(result[2])+1)}")
-print(f"{'Board ID is'.ljust(20)} : {result[2].rjust(len(result[2])+1)}")
-print()
+# Created table
+table.add_column("Box Detail",justify="left",style="magenta")
+table.add_column("Box Values",justify="left",style="magenta")
+table.add_row("Uptime",result[1])
+table.add_row("Board ID",result[2])
+console.print(table,style="cyan")
 
 # show run
-print("Extract from show run")
+table = Table(title="Extract from show run".title())
 file_name = "2022-11-08__01__192.168.1.11__show run.txt"
 result = regex_show_run(file_name)
 hostname,domain,d_inf_ip = result
 
-print(f"{'Hostname'.ljust(20)} : {hostname.rjust(22)}")
-print(f"{'Domain name'.ljust(20)} : {domain.rjust(22)}")
-print()
+# Table added for hostname and domain name
+table.add_column("Device Attributes",justify="left",style="magenta")
+table.add_column("Values",justify="left",style="magenta")
+table.add_row("Hostname",hostname)
+table.add_row("Domain name",domain)
+console.print(table,style="cyan")
+
+# Table added for interface name and IP details
+table = Table(title="Interfaces Details".title())
+table.add_column("Interface",justify="left",style="magenta")
+table.add_column("IP and its Subnet",justify="left",style="magenta")
+
 for inf,ip in d_inf_ip.items():
-    print(f"Interface is {inf.ljust(22)} : {ip.rjust(30)}")
-print()
+    table.add_row(inf,ip)
+    # print(f"Interface is {inf.ljust(22)} : {ip.rjust(30)}")
+console.print(table,style="cyan")
 
 # show ip route
-print("Extract from ip route".title())
+table = Table(title="Extract from ip route".title())
 file_name = "2022-11-08__03__192.168.1.11__show ip route.txt"
 result = regex_ip_route(file_name)
+table.add_column("Subnet",justify="left",style="magenta")
+table.add_column("Next Hop",justify="left",style="magenta")
+
 for subnet,out_inf in result.items():
-    print(f"Subnet is {subnet.ljust(17)} : Outgoing Interfca is {out_inf.rjust(25)}")
+    table.add_row(subnet,out_inf)
+    # print(f"Subnet is {subnet.ljust(17)} : Outgoing Interfca is {out_inf.rjust(25)}")
+console.print(table,style="cyan")    
 
