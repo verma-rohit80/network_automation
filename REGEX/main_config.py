@@ -4,7 +4,7 @@ import os,time,datetime
 
 
 
-def pull_config(hostname,commands):
+def pull_config(hostname,commands,username,password):
     print(hostname)
     try:
         # Get current datetime and extract date from it
@@ -48,9 +48,7 @@ with open("commands.txt") as f_commands:
 
 for hostname in f_hostnames:
     hostname = hostname.strip()
-    print(len(hostname))
-    print(hostname)
     username = "admin"
     password = "cisco"
-    pull_config(hostname,f_commands)
+    pull_config(hostname,f_commands,username,password)
 
