@@ -1,0 +1,3 @@
+Created a myconflib with init pythin file
+Imported functions from regex_filter_to_Screen.py file
+Exit out dir and under Project_1, created a main pythin called "regex_parser"

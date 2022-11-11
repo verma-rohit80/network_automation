@@ -1,0 +1,2 @@
+# from .regex_filter_to_Screen import regex_version,regex_show_run,regex_ip_route
+from .regex_filter_to_Screen import regex_version,regex_show_run,regex_ip_route
