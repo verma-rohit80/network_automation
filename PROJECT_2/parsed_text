@@ -1,0 +1,13 @@
+Interfaces With Ip Details
+interface Loopback0                : ip address 150.1.1.1 255.255.255.255
+interface Tunnel0                  : ip address 155.1.0.1 255.255.255.0
+interface GigabitEthernet0/0       : ip address 192.168.1.11 255.255.255.0
+interface GigabitEthernet0/1.13    : ip address 155.1.13.1 255.255.255.0
+interface GigabitEthernet0/1.100   : ip address 169.254.100.1 255.255.255.0
+interface GigabitEthernet0/1.146   : ip address 155.1.146.1 255.255.255.0
+
+Uptime And Board Id
+Uptime is  1 hour, 53 minutes and Board ID is 9GAOD5ZT9NIGPDWDXP3IJ
+
+Hostname And Domainname 
+Hostname is R1 and  DOmain name  is test.local
