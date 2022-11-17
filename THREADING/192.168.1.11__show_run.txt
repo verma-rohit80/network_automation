@@ -12,9 +12,7 @@ R1#show run
 Building configuration...
 
   
-Current configuration : 4286 bytes
-!
-! Last configuration change at 03:07:39 UTC Wed Nov 16 2022
+Current configuration : 4224 bytes
 !
 version 15.7
 no service timestamps debug uptime
