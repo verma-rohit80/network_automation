@@ -1,0 +1,36 @@
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      150.1.0.0/32 is subnetted, 5 subnets
+C        150.1.1.1 is directly connected, Loopback0
+O        150.1.2.2 [110/2001] via 155.1.0.5, 01:45:12, Tunnel0
+O        150.1.3.3 [110/2001] via 155.1.0.5, 01:45:12, Tunnel0
+O        150.1.4.4 [110/2001] via 155.1.0.5, 01:45:12, Tunnel0
+O        150.1.5.5 [110/1001] via 155.1.0.5, 01:45:12, Tunnel0
+      155.1.0.0/16 is variably subnetted, 11 subnets, 2 masks
+C        155.1.0.0/24 is directly connected, Tunnel0
+L        155.1.0.1/32 is directly connected, Tunnel0
+O        155.1.0.2/32 [110/2000] via 155.1.0.5, 01:45:12, Tunnel0
+O        155.1.0.3/32 [110/2000] via 155.1.0.5, 01:45:12, Tunnel0
+O        155.1.0.4/32 [110/2000] via 155.1.0.5, 01:45:12, Tunnel0
+O        155.1.0.5/32 [110/1000] via 155.1.0.5, 01:45:12, Tunnel0
+C        155.1.13.0/24 is directly connected, GigabitEthernet0/1.13
+L        155.1.13.1/32 is directly connected, GigabitEthernet0/1.13
+O IA     155.1.58.0/24 [110/1001] via 155.1.0.5, 01:45:12, Tunnel0
+C        155.1.146.0/24 is directly connected, GigabitEthernet0/1.146
+L        155.1.146.1/32 is directly connected, GigabitEthernet0/1.146
+      169.254.0.0/16 is variably subnetted, 2 subnets, 2 masks
+C        169.254.100.0/24 is directly connected, GigabitEthernet0/1.100
+L        169.254.100.1/32 is directly connected, GigabitEthernet0/1.100
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.1.11/32 is directly connected, GigabitEthernet0/0
