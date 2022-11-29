@@ -1,0 +1,6 @@
+python-dotenv
+paramiko
+netmiko
+rich
+textfsm
+
