@@ -7,10 +7,13 @@ Differ
 file_operations.py
 IPADDR
 lib
+NETMIKO
 para_1.py
 PROJECT_1
+PROJECT_2
 pyvenv.cfg
 r1_ori.txt
 README.md
 REGEX
 rough.py
+THREADING
